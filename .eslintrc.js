@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     'jest/globals': true
   },
-  extends: ['standard-with-typescript'],
+  extends: ['standard-with-typescript', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
@@ -17,7 +17,5 @@ module.exports = {
     }
   ],
   plugins: [],
-  rules: {
-    '@typescript-eslint/semi': 'off'
-  }
+  rules: {}
 };
