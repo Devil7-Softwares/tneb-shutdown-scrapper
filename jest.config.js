@@ -7,5 +7,11 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
   collectCoverageFrom: ['src/**/*.ts'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/dist/']
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/',
+    '/types/',
+    'Constants.ts',
+    'index.ts'
+  ]
 };
