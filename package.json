@@ -6,5 +6,8 @@
   "author": {
     "name": "Dineshkumar T (Devil7DK)",
     "email": "dineshthangavel47@gmail.com"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
