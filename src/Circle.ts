@@ -3,7 +3,7 @@ import { parse } from 'node-html-parser';
 import { getFormHtml } from './Common';
 import type { ICircle } from './types';
 
-export async function getCircleData(): Promise<ICircle[]> {
+export async function fetchCircles(): Promise<ICircle[]> {
   const html = await getFormHtml();
 
   const dom = parse(html);

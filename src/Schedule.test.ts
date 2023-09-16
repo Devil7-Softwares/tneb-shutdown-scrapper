@@ -2,7 +2,11 @@ import { existsSync, readFileSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 
 import * as Common from './Common';
-import { fetchSchedule, getViewState, resolveCaptcha } from './Schedule';
+import {
+  fetchShutdownSchedule,
+  getViewState,
+  resolveCaptcha
+} from './Schedule';
 import type { ISchedule } from './types';
 
 const files: Array<{ filename: string; file: Buffer }> = readdirSync(
@@ -90,7 +94,7 @@ describe('fetchSchedule', () => {
   let schedules: ISchedule[] | undefined;
 
   beforeAll(async () => {
-    schedules = await fetchSchedule('0402');
+    schedules = await fetchShutdownSchedule('0402');
   });
 
   test('Should return an array', () => {

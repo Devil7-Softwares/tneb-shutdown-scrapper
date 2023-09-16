@@ -65,7 +65,9 @@ export const getViewState = async (): Promise<{
   return { id, state };
 };
 
-export const fetchSchedule = async (circleId: string): Promise<ISchedule[]> => {
+export const fetchShutdownSchedule = async (
+  circleId: string
+): Promise<ISchedule[]> => {
   const { id, state } = await getViewState();
   const captcha = await getCaptchaValue();
   const data = new FormData();

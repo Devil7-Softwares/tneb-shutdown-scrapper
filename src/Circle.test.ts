@@ -1,11 +1,11 @@
-import { getCircleData } from './Circle';
+import { fetchCircles } from './Circle';
 import type { ICircle } from './types';
 
 describe('getCircleData', () => {
   let circles: ICircle[];
 
   beforeAll(async () => {
-    circles = await getCircleData();
+    circles = await fetchCircles();
 
     jest.clearAllMocks();
   });
