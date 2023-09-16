@@ -24,6 +24,11 @@
     "declaration": true,
     "lib": ["ESNext"]
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
