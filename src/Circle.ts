@@ -1,15 +1,14 @@
-import axios from 'axios';
 import { parse } from 'node-html-parser';
 
-import { TNEB_FORM_URL } from './Constants';
+import { getFormHtml } from './Common';
 import type { ICircle } from './types';
 
 export async function getCircleData(): Promise<ICircle[]> {
-  const response = await axios.get(TNEB_FORM_URL);
+  const html = await getFormHtml();
 
-  const dom = parse(response.data);
+  const dom = parse(html);
 
-  const options = dom.querySelectorAll('#j_idt8\\:appcat_input option');
+  const options = dom.querySelectorAll('select option');
 
   const circles: ICircle[] = [];
 

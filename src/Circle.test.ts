@@ -6,6 +6,8 @@ describe('getCircleData', () => {
 
   beforeAll(async () => {
     circles = await getCircleData();
+
+    jest.clearAllMocks();
   });
 
   test('Should return an array', async () => {
