@@ -13,6 +13,10 @@ export async function getCircleData(): Promise<ICircle[]> {
   const circles: ICircle[] = [];
 
   for (const option of options) {
+    if (isNaN(Number(option.attributes.value))) {
+      continue;
+    }
+
     const circle: ICircle = {
       name: option.text,
       value: option.attributes.value
