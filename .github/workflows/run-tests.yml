@@ -1,0 +1,25 @@
+# Github Action to run tests everyday at 12:00 IST (UTC +5:30) to make sure the code is working fine and whenevery code is pushed to the repo
+
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '30 6 * * *' # Everyday at 12:00 IST (UTC +5:30)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Tests
+        run: yarn test
